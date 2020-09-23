@@ -8,7 +8,7 @@ class PropertySerializer(serializers.ModelSerializer):
         model = Property
 
 
-        fields = '__all__'
+        fields = ['name','description','image','price','location']
 
     def create(self,validated_data):
         return Property.objects.create(**validated_data)
