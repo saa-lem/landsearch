@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView,RedirectView
 from rest_framework.generics import GenericAPIView,RetrieveAPIView 
-from rest_framework.mixins import ListModelMixin,CreateModelMixin
+from rest_framework.mixins import ListModelMixin,CreateModelMixin,UpdateModelMixin
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import filters
@@ -32,7 +32,8 @@ class PropertyView(APIView):
         serializer = PropertySerializer(properties, many=True)
         return Response({"properties": serializer.data})
    
-
+class CreateAPIView(mixins.CreateModelMixin,
+                    GenericAPIView):
     def post(self, request,pk):
         property = request.data.get('property')
 
@@ -41,7 +42,8 @@ class PropertyView(APIView):
         if serializer.is_valid(raise_exception=True):
             property_saved = serializer.save()
         return Response({"success": "Property '{}' added successfully".format(property_saved.name)})
-        
+class UpdateAPIView(mixins.UpdateModelMixin,
+                    GenericAPIView):     
     def put(self, request, pk):
         saved_property = get_object_or_404(Property.objects.all(), pk=pk)
         data = request.data.get('property')
@@ -50,6 +52,8 @@ class PropertyView(APIView):
              property_saved = serializer.save()
         return Response({"success": "Property '{}' updated successfully".format(property_saved.name)}) 
 
+class DestroyAPIView(mixins.DestroyModelMixin,
+                     GenericAPIView):
     def delete(self, request, pk):
     # Get object with this pk
         property = get_object_or_404(   Property.objects.all(), pk=pk)
