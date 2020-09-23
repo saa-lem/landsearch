@@ -14,7 +14,7 @@ from rest_framework.mixins import ListModelMixin,CreateModelMixin,UpdateModelMix
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import filters
-from rest_framework import generics
+from rest_framework import  mixins,generics
 from django.http import HttpResponse
 from django.urls import reverse
 from rest_framework.response import Response
