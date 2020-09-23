@@ -4,11 +4,14 @@ from .models import Property,Profile
 
 
 class PropertySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Property
+    name = serializers.CharField(max_length=120)
+    description = serializers.CharField()
+    price = serializers.DecimalField(max_digits=10, decimal_places=2)
+    location=serializers.CharField(max_length=20)
+    image = serializers.ImageField()
 
 
-        fields = ['name','description','image','price','location']
+      
 
     def create(self,validated_data):
         return Property.objects.create(**validated_data)
