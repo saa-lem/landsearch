@@ -34,15 +34,15 @@ class PropertyView(APIView):
    
 class PropertyCreateAPIView(CreateAPIView):
   queryset = Property.objects.all()
-  serializer_class = ProfileCreateSerializer
+  serializer_class = PropertyCreateSerializer
     
 class PropertyUpdateAPIView(UpdateAPIView):
   queryset = Property.objects.all()
-  serializer_class = ProfileCreateSerializer
+  serializer_class = PropertyUpdateSerializer
 
 class PropertytDeleteAPIView(DestroyAPIView):
   queryset = Property.objects.all()
-  serializer_class = ProfileCreateSerializer
+  serializer_class = PropertyDeleteSerializer
 class UserPropertyListView(generics.ListAPIView):
     queryset = Property.objects.all()
     serializer_class = PropertySerializer
