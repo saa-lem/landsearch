@@ -23,7 +23,7 @@ class PropertyUpdateSerializer(serializers.ModelSerializer):
 
         fields=['name','image','description','price','location'] 
 
-  class PropertyDeleteSerializer(serializers.ModelSerializer):
+class PropertyDeleteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Property
 
