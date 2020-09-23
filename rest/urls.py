@@ -1,6 +1,6 @@
 
 from django.urls import path
-from .views import PropertyView,PropertytDestroyView,PropertyUpdateView,PropertyCreateView,UserPropertyListView
+from .views import PropertyView,PropertyDestroyView,PropertyUpdateView,PropertyCreateView,UserPropertyListView
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
@@ -10,7 +10,7 @@ urlpatterns = [
   path('api/properties/', views.PropertyView.as_view()),
   path('api/properties/update>', views.PropertyUpdateView.as_view()),
   path('api/properties/create', views.PropertyCreateView.as_view()), 
-  path('api/properties/delete', views.PropertytDestroyView.as_view())
+  path('api/properties/delete', views.PropertyDestroyView.as_view())
   
 ] 
 if settings.DEBUG:
