@@ -40,7 +40,7 @@ class PropertyUpdateAPIView(UpdateAPIView):
   queryset = Property.objects.all()
   serializer_class = PropertyUpdateSerializer
 
-class PropertytDeleteAPIView(DestroyAPIView):
+class PropertytDestroyAPIView(DestroyAPIView):
   queryset = Property.objects.all()
   serializer_class = PropertyDeleteSerializer
 class UserPropertyListView(generics.ListAPIView):
