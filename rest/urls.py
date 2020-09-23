@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
+  path('api/search/',UserPropertyListView.as_view(), name = 'user-projects'),
   path('api/properties/', views.PropertyView.as_view()),
   path('api/properties/<int:id>', views.PropertyView.as_view),
   path('api/properties/delete', views.PropertyView.as_view),
