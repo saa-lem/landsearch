@@ -9,7 +9,7 @@ urlpatterns = [
   path('api/search/',UserPropertyListView.as_view(), name = 'user-projects'),
   path('api/properties/', views.PropertyView.as_view()),
   path('api/properties/<int:pk>', views.UpdateAPIView.as_view()),
-  path('api/properties/create', views.CreateAPIView,.as_view()), 
+  path('api/properties/create', views.CreateAPIView.as_view()), 
   path('api/properties/<int:pk>', views.DestroyAPIView.as_view())
   
 ] 
