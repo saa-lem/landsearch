@@ -42,13 +42,13 @@ class PropertyView(APIView):
             property_saved = serializer.save()
         return Response({"success": "Property '{}' added successfully".format(property_saved.name)})
         
-     def put(self, request, pk):
-         saved_property = get_object_or_404(Property.objects.all(), pk=pk)
-         data = request.data.get('property')
-         serializer = PropertySerializer(instance=saved_property, data=data, partial=True
-         if serializer.is_valid(raise_exception=True):  
+    def put(self, request, pk):
+        saved_property = get_object_or_404(Property.objects.all(), pk=pk)
+        data = request.data.get('property')
+        serializer = PropertySerializer(instance=saved_property, data=data, partial=True
+        if serializer.is_valid(raise_exception=True):  
             property_saved = serializer.save()
-         return Response({"success": "Property '{}' updated successfully".format(property_saved.name)}) 
+        return Response({"success": "Property '{}' updated successfully".format(property_saved.name)}) 
 
     def delete(self, request, pk):
     # Get object with this pk
