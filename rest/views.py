@@ -19,7 +19,7 @@ from django.http import HttpResponse
 from django.urls import reverse
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import PropertySerializer, ProfileSerializer
+from .serializers import PropertySerializer, ProfileSerializer,PropertyCreateSerializer,PropertyDeleteSerializer,PropertyUpdateSerializer
 from .models import Property, Profile
 from .forms import ProfileUpdateForm, UserUpdateForm, PostPropertyForm
 from .models import Profile
