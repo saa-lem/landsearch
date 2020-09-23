@@ -26,7 +26,7 @@ from .models import Profile
 from itertools import chain
 # Create your views here.
 class PropertyView(APIView):
-    def get(self, request, pk, format=None):
+    def get(self, request):
         properties = Property.objects.all()
         # the many param informs the serializer that it will be serializing more than a single article.
         serializer = PropertySerializer(properties, many=True)
