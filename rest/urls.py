@@ -8,9 +8,9 @@ from . import views
 urlpatterns = [
   path('api/search/',UserPropertyListView.as_view(), name = 'user-projects'),
   path('api/properties/', views.PropertyView.as_view()),
-  path('api/properties/<int:pk>', views.PropertyUpdateView.as_view()),
+  path('api/properties/update>', views.PropertyUpdateView.as_view()),
   path('api/properties/create', views.PropertyCreateView.as_view()), 
-  path('api/properties/<int:pk>', views.PropertytDeleteView.as_view())
+  path('api/properties/delete', views.PropertytDeleteView.as_view())
   
 ] 
 if settings.DEBUG:

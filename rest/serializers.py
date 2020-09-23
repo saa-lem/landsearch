@@ -10,21 +10,24 @@ class PropertySerializer(serializers.Serializer):
     location=serializers.CharField(max_length=20)
     image = serializers.ImageField()
 
+class PropertyCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Property
 
+        fields=['name','description','price','location','image'] 
       
 
-    def create(self,validated_data):
-        return Property.objects.create(**validated_data)
+  class PropertyUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Property
 
+        fields=['name','image','description','price','location'] 
 
-    def update(self, instance, validated_data):
-        instance.name = validated_data.get('name', instance.name)
-        instance.description = validated_data.get('description', instance.description)
-        instance.image = validated_data.get('image', instance.image)
-        instance.price = validated_data.get('price', instance.price)
+  class PropertyDeleteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Property
 
-        instance.save()
-        return instance
+        fields=['name','description','price','location','image'] 
 
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
