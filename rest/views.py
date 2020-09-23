@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView,RedirectView,CreateView
-from rest_framework.generics import GenericAPIView,RetrieveAPIView ,CreateAPIView,UpdateAPIView,DeleteAPIView
+from rest_framework.generics import GenericAPIView,RetrieveAPIView ,CreateAPIView,UpdateAPIView,DestroyAPIView
 from rest_framework.mixins import ListModelMixin,CreateModelMixin,UpdateModelMixin
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -32,15 +32,15 @@ class PropertyView(APIView):
         serializer = PropertySerializer(properties, many=True)
         return Response({"properties": serializer.data})
    
-class PropertyCreateAPIView(generics.CreateAPIView):
+class PropertyCreateAPIView(CreateAPIView):
   queryset = Property.objects.all()
   serializer_class = ProfileCreateSerializer
     
-class PropertyUpdateAPIView(generics.UpdateAPIView):
+class PropertyUpdateAPIView(UpdateAPIView):
   queryset = Property.objects.all()
   serializer_class = ProfileCreateSerializer
 
-class PropertytDeleteAPIView(generics.DeleteAPIView):
+class PropertytDeleteAPIView(DestroyAPIView):
   queryset = Property.objects.all()
   serializer_class = ProfileCreateSerializer
 class UserPropertyListView(generics.ListAPIView):
