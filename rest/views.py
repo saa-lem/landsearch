@@ -33,7 +33,7 @@ class PropertyView(APIView):
         return Response({"properties": serializer.data})
    
 
-    def post(self, request):
+    def post(self, request,pk):
         property = request.data.get('property')
 
         # Create an article from the above data
