@@ -6,6 +6,7 @@ from django.db import models
 from django.db import models
 from django.db.models import Q
 from django.contrib.auth.models import User
+from pyuploadcare.dj.models import ImageField
 # Create your models here.
 
 
@@ -13,7 +14,7 @@ from django.contrib.auth.models import User
 class Property(models.Model):
     name = models.CharField(max_length=20)
     location=models.CharField(max_length=20)
-    image = models.ImageField(upload_to='property_photo', blank=True, default='property_photo/property.jpg')
+    image = ImageField(blank=True, manual_crop='')
     price= models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField()
 

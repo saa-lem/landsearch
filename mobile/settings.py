@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'pyuploadcare.dj',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +72,13 @@ TEMPLATES = [
         },
     },
 ]
+
+
+UPLOADCARE = {
+    'pub_key': '557ba8f5e78026902bd0',
+    'secret': ' 48f6b1bf0063508ad239',
+}
+
 
 WSGI_APPLICATION = 'mobile.wsgi.application'
 
