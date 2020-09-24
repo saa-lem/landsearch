@@ -1,2 +1,1 @@
-#
-web: gunicorn mobile:app --preload
+web: gunicorn mobile.wsgi --log-file -
