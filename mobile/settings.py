@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
-from decouple import config,Csv
 import dj_database_url
 from pathlib import Path
 import django_heroku
@@ -77,7 +76,7 @@ TEMPLATES = [
 
 UPLOADCARE = {
     'pub_key': '557ba8f5e78026902bd0',
-    'secret': ' 48f6b1bf0063508ad239',
+    'secret': '48f6b1bf0063508ad239',
 }
 
 
