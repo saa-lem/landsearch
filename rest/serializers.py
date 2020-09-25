@@ -3,7 +3,7 @@ from .models import Property,Profile
 
 
 
-class PropertySerializer(serializers.Serializer):
+class PropertySerializer(serializers.ModelSerializer):
     name = serializers.CharField(max_length=120)
     description = serializers.CharField()
     price = serializers.DecimalField(max_digits=10, decimal_places=2)
