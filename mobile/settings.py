@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'pyuploadcare.dj',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
@@ -79,6 +81,16 @@ UPLOADCARE = {
     'secret': '48f6b1bf0063508ad239',
 }
 
+CORS_ORIGIN_ALLOW_ALL = True 
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
 
 WSGI_APPLICATION = 'mobile.wsgi.application'
 
