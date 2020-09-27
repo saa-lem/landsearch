@@ -14,8 +14,8 @@ from pyuploadcare.dj.models import ImageField
 class Property(models.Model):
     name = models.CharField(max_length=20)
     location=models.CharField(max_length=20)
-    # image=models.ImageField(upload_to='property_photo',blank=True,default='property_photo/defaultproperty.jpg')
-    image = ImageField(blank=True, manual_crop='')
+    image=models.ImageField(upload_to='property_photo',blank=True,default='property_photo/defaultproperty.jpg')
+    # image = ImageField(blank=True, manual_crop='')
     price= models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField()
 
