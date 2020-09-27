@@ -4,6 +4,7 @@ from .models import Property,Profile
 
 
 class PropertySerializer(serializers.ModelSerializer):
+    class Meta:
     name = serializers.CharField(max_length=120)
     description = serializers.CharField()
     price = serializers.DecimalField(max_digits=10, decimal_places=2)
