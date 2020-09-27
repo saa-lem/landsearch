@@ -74,7 +74,9 @@ TEMPLATES = [
         },
     },
 ]
-
+AUTHENTICATION_BACKENDS = (
+    ('django.contrib.auth.backends.ModelBackend'),
+)
 
 UPLOADCARE = {
     'pub_key': '557ba8f5e78026902bd0',
